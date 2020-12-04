@@ -218,8 +218,29 @@ namespace RedWolfDataCrunch
             List<string> cLegLength = ReproductiveFunctions.EvaluateAlleles(LegLength, Partner.LegLength);
 
             float cKinship = (Kinship + Partner.Kinship) / 2;
-            
-            RedWolf child = new RedWolf(random.Next(1, 2) == 1 ? Gender.Male : Gender.Female, Partner.Class == Class.UpperClass ? Class.UpperClass : Class == Class.UpperClass ? Class.UpperClass : Class.NormalClass, Int32.Parse(ID.ToString() + Partner.ID.ToString()), 0, cKinship, cEarSize[random.Next(0, 3)], cPawSize[random.Next(0, 3)], cLegLength[random.Next(0, 3)], Partner.Gender == Gender.Female ? Partner : this, Partner.Gender == Gender.Male ? Partner : this);
+
+            int cID = Int32.Parse(ID.ToString() + Partner.ID.ToString() + random.Next(0, 50000).ToString());
+            bool flag = false;
+
+            // this is a crappy way of making sure wolfs don't have the same id but eh
+            while (true)
+            {
+                foreach (RedWolf wolf in Data.Wolfs)
+                    if (wolf.ID == cID)
+                    {
+                        flag = true;
+                    }
+
+                if (flag) {
+                    cID = Int32.Parse(ID.ToString() + Partner.ID.ToString() + random.Next(0, 50000).ToString());
+                    flag = false;
+                    continue;
+                }
+                else
+                    break;
+            }
+
+            RedWolf child = new RedWolf(random.Next(1, 3) == 1 ? Gender.Male : Gender.Female, Partner.Class == Class.UpperClass ? Class.UpperClass : Class == Class.UpperClass ? Class.UpperClass : Class.NormalClass, cID, 0, cKinship, cEarSize[random.Next(0, 4)], cPawSize[random.Next(0, 4)], cLegLength[random.Next(0, 4)], Partner.Gender == Gender.Female ? Partner : this, Partner.Gender == Gender.Male ? Partner : this);
 
             AddChild(child);
             Partner.AddChild(child);
@@ -279,6 +300,7 @@ namespace RedWolfDataCrunch
                 Environment.Exit(-1);
             }
             Output.PrintOperation($"Finished Constructing...");
+            Data.Wolfs.Add(this);
         }
     }
 }
