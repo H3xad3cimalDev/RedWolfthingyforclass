@@ -1,0 +1,7 @@
+C:\Users\guilf\source\repos\RedWolfDataCrunch\bin\Debug\RedWolfDataCrunch.exe.config
+C:\Users\guilf\source\repos\RedWolfDataCrunch\bin\Debug\RedWolfDataCrunch.exe
+C:\Users\guilf\source\repos\RedWolfDataCrunch\bin\Debug\RedWolfDataCrunch.pdb
+C:\Users\guilf\source\repos\RedWolfDataCrunch\obj\Debug\RedWolfDataCrunch.csproj.CoreCompileInputs.cache
+C:\Users\guilf\source\repos\RedWolfDataCrunch\obj\Debug\RedWolfDataCrunch.exe
+C:\Users\guilf\source\repos\RedWolfDataCrunch\obj\Debug\RedWolfDataCrunch.pdb
+C:\Users\guilf\source\repos\RedWolfDataCrunch\obj\Debug\RedWolfDataCrunch.csprojAssemblyReference.cache
